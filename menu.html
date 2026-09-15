@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - In-N-Out Delivery</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>IN-N-OUT<span class="delivery-text">Delivery</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="index.html#locations">Locations</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="cart.html" class="cart-btn">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Made fresh to order, every time</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-section">
+        <div class="container">
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="burgers">Burgers</button>
+                <button class="filter-btn" data-category="sides">Sides</button>
+                <button class="filter-btn" data-category="drinks">Drinks</button>
+                <button class="filter-btn" data-category="shakes">Shakes</button>
+            </div>
+
+            <!-- Burgers -->
+            <div class="menu-category" id="burgers">
+                <h2>🍔 Burgers</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="burgers">
+                        <div class="menu-item-image">🍔</div>
+                        <div class="menu-item-content">
+                            <h3>Hamburger</h3>
+                            <p>Fresh beef patty with lettuce, tomato, onions, spread</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$3.00</span>
+                                <button class="add-btn" onclick="addToCart('Hamburger', 3.00)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="burgers">
+                        <div class="menu-item-image">🍔</div>
+                        <div class="menu-item-content">
+                            <h3>Cheeseburger</h3>
+                            <p>Beef patty with American cheese, lettuce, tomato, onions, spread</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$3.75</span>
+                                <button class="add-btn" onclick="addToCart('Cheeseburger', 3.75)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="burgers">
+                        <div class="menu-item-image">🍔</div>
+                        <div class="menu-item-content">
+                            <h3>Double-Double</h3>
+                            <p>Two beef patties, two slices of cheese, lettuce, tomato, onions, spread</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$5.50</span>
+                                <button class="add-btn" onclick="addToCart('Double-Double', 5.50)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="burgers">
+                        <div class="menu-item-image">🍔</div>
+                        <div class="menu-item-content">
+                            <h3>3x3 Burger</h3>
+                            <p>Three beef patties, three slices of cheese, lettuce, tomato, onions, spread</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$7.25</span>
+                                <button class="add-btn" onclick="addToCart('3x3 Burger', 7.25)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sides -->
+            <div class="menu-category" id="sides">
+                <h2>🍟 Sides</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="sides">
+                        <div class="menu-item-image">🍟</div>
+                        <div class="menu-item-content">
+                            <h3>French Fries</h3>
+                            <p>Fresh-cut potatoes, cooked in 100% sunflower oil</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$2.25</span>
+                                <button class="add-btn" onclick="addToCart('French Fries', 2.25)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="sides">
+                        <div class="menu-item-image">🍟</div>
+                        <div class="menu-item-content">
+                            <h3>Animal Style Fries</h3>
+                            <p>Fries with cheese, spread, and grilled onions</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$4.50</span>
+                                <button class="add-btn" onclick="addToCart('Animal Style Fries', 4.50)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-category" id="drinks">
+                <h2>🥤 Drinks</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">🥤</div>
+                        <div class="menu-item-content">
+                            <h3>Soft Drink</h3>
+                            <p>Coca-Cola, Sprite, Dr. Pepper, Diet Coke</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$2.00</span>
+                                <button class="add-btn" onclick="addToCart('Soft Drink', 2.00)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">🧃</div>
+                        <div class="menu-item-content">
+                            <h3>Lemonade</h3>
+                            <p>Fresh-squeezed lemonade</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$2.25</span>
+                                <button class="add-btn" onclick="addToCart('Lemonade', 2.25)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">☕</div>
+                        <div class="menu-item-content">
+                            <h3>Iced Tea</h3>
+                            <p>Freshly brewed iced tea</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$2.00</span>
+                                <button class="add-btn" onclick="addToCart('Iced Tea', 2.00)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">🥛</div>
+                        <div class="menu-item-content">
+                            <h3>Milk</h3>
+                            <p>Cold, fresh milk</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$1.75</span>
+                                <button class="add-btn" onclick="addToCart('Milk', 1.75)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shakes -->
+            <div class="menu-category" id="shakes">
+                <h2>🍦 Shakes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="shakes">
+                        <div class="menu-item-image">🍦</div>
+                        <div class="menu-item-content">
+                            <h3>Vanilla Shake</h3>
+                            <p>Real ice cream vanilla shake</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$2.95</span>
+                                <button class="add-btn" onclick="addToCart('Vanilla Shake', 2.95)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="shakes">
+                        <div class="menu-item-image">🍫</div>
+                        <div class="menu-item-content">
+                            <h3>Chocolate Shake</h3>
+                            <p>Real ice cream chocolate shake</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$2.95</span>
+                                <button class="add-btn" onclick="addToCart('Chocolate Shake', 2.95)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-category="shakes">
+                        <div class="menu-item-image">🍓</div>
+                        <div class="menu-item-content">
+                            <h3>Strawberry Shake</h3>
+                            <p>Real ice cream strawberry shake</p>
+                            <div class="menu-item-footer">
+                                <span class="price">$2.95</span>
+                                <button class="add-btn" onclick="addToCart('Strawberry Shake', 2.95)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>IN-N-OUT Delivery</h4>
+                    <p>Quality you can taste, delivered to your door.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#locations">Locations</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#support">Support</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📞 1-800-786-1000</p>
+                    <p>📧 delivery@in-n-out.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 In-N-Out Delivery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
